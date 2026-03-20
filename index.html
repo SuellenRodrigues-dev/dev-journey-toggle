@@ -1,0 +1,108 @@
+ 
+ <!DOCTYPE html>
+ <html lang = "pt-BR">
+
+ 
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name = "viewport"
+        content = "width = device-width,
+        initial-scale = 1.0">
+
+    <title> dev-journey-toggle </title>
+
+    <style>
+        body{
+            background-color: #0f172a;
+            color: white;
+            font-family:Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+     button{
+        background:#3b82f6;
+        border: none;
+        color: white;
+        cursor: pointer ;
+        border-radius: 8px;
+        padding: 10px 20px;
+        transition: 0.3s;
+
+     }
+     button:hover {
+        background-color:#2563eb;
+        transform: scale( 1.05);
+    }
+
+    button:active{
+        transform: scale(0.95);
+    }
+     h1{
+        color:#3b82f6 ;
+        text-align: center;
+    
+     }
+     span{
+        color: #ef4444;
+
+     }
+      p{
+        font-size: 30px;
+        font-weight: bold ;
+        }
+ 
+        #mensagem {
+    transition: 0.5s;
+    margin: 20px 0;
+     }
+      .container{
+        text-align: center;
+      }
+
+
+    </style>
+     </head>
+
+         <body>
+
+        <div class="container">
+      
+        <h1> Minha Jornada na <span>PROGRAMAÇÃO</span></h1>
+
+        <p id = "mensagem"> Quero virar uma programadora de SUCESSO</p>
+
+        <button id="botao"> O QUE PRECISO?</button>
+        </div>
+        <script>
+            const botao = document.getElementById("botao");
+            const mensagem = document.getElementById("mensagem");
+            let ativo = false;
+
+        function mudarTexto() {
+    
+        mensagem.style.opacity = "0"; // opacity controla a transparência, 0 = invisivel, 1 visível.//
+
+        setTimeout(() =>{  // steTimeout espera um tempo// => representa a função//
+              if (ativo == false) {
+                mensagem.innerText = "Disciplina diária 💻";
+                ativo = true; 
+            } else {
+                mensagem.innerText = "Quero virar uma programadora de SUCESSO";
+            ativo = false;
+            }
+            mensagem.style.opacity = "1";
+        }, 500); 
+    }// 500= mei segundo , 1000 = 1 segundo//
+
+        botao.addEventListener ("click", mudarTexto );
+
+        </script>
+
+        </body>
+
